@@ -16,15 +16,16 @@ print(sum_divisors(102))
 
 
 def sum_divisors(n):
-    sum = 0
-    x = 1
-    while x < n:
+    divisors = []
+    for x in range(1, n):
         if n % x == 0:
-            sum += x
-        else:
-            x += 1
-            
-    return sum
+            divisors.append(x)
+    
+    result, divisors = sum_divisors(n)
+    print(f"Άθροισμα διαιρετών: {result}")
+    print(f"Διαιρέτες: {divisors}")
+    return sum(divisors), divisors
+
 
 
 
